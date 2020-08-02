@@ -31,7 +31,7 @@ sigma.mult = (b-w)/sigma # number of sigmas that b is greater than w
 sdat = Palm2mleData(porpoise.data$points,porpoise.data$cameras,porpoise.data$d,porpoise.data$l,porpoise.data$w,b)
 
 # Look at numbers within segments:
-segmentplot(sdat,planespd)
+# segmentplot(sdat,planespd)
 
 # Set optim() control parameters
 control.opt=list(trace=0,maxit=1000)
