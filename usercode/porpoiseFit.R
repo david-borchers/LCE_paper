@@ -10,18 +10,16 @@ require(car)
 require(palm)
 
 #  Get the porpoise data from package palm
-
 data("porpoise")
 
+# Set some constants and starting values
 nm2km=1.852 # multiplier to convert nautical miles to kilometres
 tau = 110 # dive cycle length
 gamma = 86/110 # starting point for gamma estimate
 kappa = gamma*tau # starting point for kappa estimate
 D = 1.24 # starting point for density estimate
-
 planeknots=100 # observer speed in knots
 planespd=planeknots*nm2km/(60^2) # observer speed in km/sec
-
 sigma=0.15*2/sqrt(248)   #  convert sigma from CCR to that for LCE
 b = 2 # buffer half-width
 w = 0.125 # striop half-width
