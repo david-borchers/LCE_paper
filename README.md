@@ -10,7 +10,7 @@ The usercode folder contains three files:
 
 2. sim-longlag.r contains code to do the long-lag simulations, and
 
-3. sim-shortlag.r contains code to do the long-lag simulations, and
+3. sim-shortlag.r contains code to do the long-lag simulations.
 
 
 twoplane package
