@@ -2,7 +2,7 @@ Contents
 ========
 This is code to go with the paper "A latent capture history model for digital aerial surveys". 
 
-It contains an R package called "twoplane" and a folder called "usercode". You will need to build the package before using it, and because the likelihood is coded in C++ you will need a C++ compiler.
+It contains source code for an R package called "twoplane" and a folder called "usercode". You will need to build the package before using it, and because the likelihood is coded in C++ you will need a C++ compiler.
 
 The usercode folder contains three files:
 
