@@ -17,3 +17,8 @@ twoplane package
 ==============
 
 Estimates animal density and related parameters from a mark-recapture line transect survey using two cameras, on which recaptures are not identified, there is animal movement and animals' availability is governed by a Markov model. 
+
+RStudio
+=======
+
+If you are an RStudio user, you might want to use the R project file LCE_paper.proj as your RStudio project file.
