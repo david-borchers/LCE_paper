@@ -21,4 +21,4 @@ Estimates animal density and related parameters from a mark-recapture line trans
 RStudio
 =======
 
-If you are an RStudio user, you might want to use the R project file LCE_paper.proj as your RStudio project file.
+If you are an RStudio user, you might want to use the R project file LCE_paper.Rproj as your RStudio project file.
