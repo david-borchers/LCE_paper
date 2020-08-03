@@ -1,3 +1,11 @@
+#' @title 95\% Std deviation and confidence interval for lognormal
+#'
+#' @description
+#'  Calculates the standard deviation and 95% confidence interval for a lognormal
+#'  random variable, given the normal mean and standard deviation.
+#'  
+#' @param mu Normal mean
+#' @param sd Normal std dev.
 #' @examples 
 #' sigma.beta=0.24
 #' mu.beta= -1.6

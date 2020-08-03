@@ -14,7 +14,6 @@ f.d=function(delta,k,theta3,dmax) return(1)
 #' @param spd The speed at which the barrier drifts.
 #' @param theta3 The log of the Brownian motion rate parameter.
 #' 
-#' @examples 
 dft = function(ft,k,spd,theta3) { 
   sigmarate=exp(theta3)
   return(spd*k*exp(-spd^2*(k-ft)^2/(2*sigmarate^2*ft))/sqrt(2*pi*sigmarate^2*ft^3))
@@ -33,7 +32,6 @@ dft = function(ft,k,spd,theta3) {
 #' @param spd The speed at which the barrier drifts.
 #' @param theta3 The log of the Brownian motion rate parameter.
 #' 
-#' @examples 
 dfd = function(fd,k,spd,theta3) dft(fd/spd,k,spd,theta3)*spd
 
 #' @title Random variable for Brownian hitting time
@@ -49,7 +47,6 @@ dfd = function(fd,k,spd,theta3) dft(fd/spd,k,spd,theta3)*spd
 #' @param spd The speed at which the barrier drifts.
 #' @param theta3 The log of the Brownian motion rate parameter.
 #' 
-#' @examples 
 rft = function(n,k,spd,theta3,prop.mult=1.5) {
   sigmarate=exp(theta3)
   sigma.t = sqrt(k)*sigmarate/planespd
@@ -85,7 +82,6 @@ rft = function(n,k,spd,theta3,prop.mult=1.5) {
 #' @param IO The in-out transition probability matrix. Must either be 2x2 or 2x2xlength(t), 
 #' with IO[,,i] being the in-out transition probability matrix for time t[i].
 #' 
-#' @examples 
 p.omega.t=function(t,idbn,p1,p2,Qmat,omega,IO=NULL){
   nt=length(t)
   p=rep(NA,nt)
@@ -149,7 +145,6 @@ p.omega.t=function(t,idbn,p1,p2,Qmat,omega,IO=NULL){
 #' @param ft.normal if TRUE uses normal to approximate Brownian hitting times, else 
 #' uses exact expression for Brownian hitting times.
 #' 
-#' @examples 
 p.t = function(E1,Ec,p,sigmarate,k,dmax.t,planespd,halfw.dist=NULL,adj.mvt=FALSE,io=TRUE,
                idbn=NULL,nts=200,ft.normal=TRUE) {
   Qmat=matrix(c(-1/E1,1/(Ec-E1),1/E1,-1/(Ec-E1)),nrow=2)

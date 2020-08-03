@@ -58,6 +58,4 @@ sigma.palm = sigmarate2sigmapalm(mlefit$sigmarate["est"],248)
 
 # Calculate mean velocity associated with sigma estimate
 getspeed(mlefit$sigmarate["est"],248)*1000
-  
-# Save for use in paper:
-saveRDS(mlefit,file="./inst/results/survey.mle.Rds")
+
