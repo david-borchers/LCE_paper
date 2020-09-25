@@ -1,6 +1,6 @@
 Contents
 ========
-This is code to go with the paper "A latent capture history model for digital aerial surveys". 
+This is code to go with the paper _A latent capture history model for digital aerial surveys_ by D. L. Borchers, P. Nightingale, B. C. Stevenson, and R. M. Fewster, to appear in the journal Biometrics. 
 
 It contains source code for an R package called "twoplane" and a folder called "usercode". You will need to build the package before using it.
 
