@@ -16,8 +16,11 @@ To build and install the package in R using devtools, you may use the following 
 _Start R and set the working directory to the directory containing this file_
 
 install.packages("devtools")
+
 library(devtools)
+
 build()
+
 install()
 
 _Now the package should be ready to load:_
