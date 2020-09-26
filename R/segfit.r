@@ -1,4 +1,49 @@
 
+#' @title segfit -- LCE estimation of animal density from line transect survey data
+#'
+#' @description
+#'  This function uses maximum likelihood estimation to estimate density (and some other related parameters) of animals from
+#'  a mark-recapture line transect survey using two cameras, without any given recapture information. 
+#'  The method is Latent Capture history Enumeration (LCE) and it is described in the paper 
+#'  _A latent capture history model for digital aerial surveys_ by D. L. Borchers, P. Nightingale, 
+#'  B. C. Stevenson, and R. M. Fewster, to appear in the journal Biometrics.
+#'  LCE uses a Markov model for animal availability (which in a marine survey can be interpreted 
+#'  as a model of the diving cycle combined with a model of movements into or out of the detection strip).
+#'  It uses a Gaussian movement model with a single speed parameter to model animal movement. 
+#'  Since recaptures are unknown, LCE enumerates recapture scenarios. In each scenario where pairs of observations
+#'  (that are sufficiently close) are 
+#' 
+#'  The package documentation has an example of using segfit.  
+#'  
+#' @param dat A list containing the following:
+#' y1: Set of observations by the first observer, measured in distance units from the start of the transect.
+#' y2: Set of observations by the second observer.
+#' k: Lag (in seconds) between observer 1 and observer 2.
+#' L: Length of the transect line, in the same distance units as y1 and y2. 
+#' w: Half-width of the detection strip in distance units. 
+#' b: Buffer half-width (distance from the centre line of the detection strip to the edge of the buffer), beyond which the method assumes that no animal can enter the detection strip between passage of the two observers. 
+#' 
+#' 
+#' @param D.2D Starting point for the density estimate, expressed as a two-dimensional density. 
+#' @param E1 Starting point for estimation of time in the surface or near-surface state during each dive cycle (in seconds).
+#' @param Ec Dive cycle length in seconds.
+#' @param sigmarate Starting point for estimation of speed of the animals (the parameter of the Gaussian movement model)
+#' @param planespd Speed of the observers (in distance units per second)
+#' @param p Vector of detection probabilities for the two observers (defaults to c(1,1))
+#' @param sigma.mult  This parameter is no longer used (defaults to 5).
+#' @param control.opt Passed through to the control.opt argument of function optim in package stats. 
+#' @param method Optimisation method, defaults to "BFGS", passed to the optim function in package stats. 
+#' @param estimate Vector of parameters to estimate, subset of c("D", "sigma", "E1", "mu_c") (D: density, sigma: animal speed, E1: time available for observation during dive cycle, mu_c: dive cycle length). Default value is c("D","sigma","E1"). 
+#' @param set.parscale Set the parscale parameter of optim using the starting point values given (defaults to TRUE)
+#' @param io Include in/out movement in the model, i.e. animals may become available or unavailable for detection between observers because of movement in/out of the detection strip (defaults to TRUE)
+#' @param Dbound If estimating only D, Dbound may be used to provide upper and lower bounds for log(D). It is a list with elements $lower and $upper (default value NULL).
+#' @param hessian 
+#' @param adj.mvt Adjust animal movement along the transect line to account for observer movement (e.g. if the animal moves in the opposite direction to the observers, then the elapsed time between the two observers passing the animal is less than k). If the flag is set to FALSE, the animal movement model assumes k seconds elapsed between the two observers passing the animal  (defaults to TRUE).
+#' @param ft.normal If TRUE, uses normal to approximate Brownian hitting times, else uses exact expression for Brownian hitting times.
+#' @param cutstretch Factor to increase the maximum distance at which two observations may be considered to be observations of the same animal (defaults to 1).
+#' @param krtest This parameter is no longer used. 
+
+
 segfit=function(dat,D.2D,E1,Ec,sigmarate,planespd,p=c(1,1),sigma.mult=5,control.opt=NULL,
                 method="BFGS",estimate=c("D","sigma","E1"),set.parscale=TRUE,
                 io=TRUE,Dbound=NULL,hessian=TRUE,adj.mvt=TRUE,ft.normal=FALSE,cutstretch=1,krtest=FALSE) {
