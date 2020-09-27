@@ -5,7 +5,7 @@
 #'  This function uses maximum likelihood estimation to estimate density (and some other related parameters) of animals from
 #'  a mark-recapture line transect survey using two cameras, without any given recapture information. 
 #'  The method is Latent Capture history Enumeration (LCE) and it is described in the paper 
-#'  _A latent capture history model for digital aerial surveys_ by D. L. Borchers, P. Nightingale, 
+#'  "A latent capture history model for digital aerial surveys" by D. L. Borchers, P. Nightingale, 
 #'  B. C. Stevenson, and R. M. Fewster, to appear in the journal Biometrics.
 #'  LCE uses a Markov model for animal availability (which in a marine survey can be interpreted 
 #'  as a model of the diving cycle combined with a model of movements into or out of the detection strip).
@@ -16,11 +16,17 @@
 #'  The package documentation has an example of using segfit.  
 #'  
 #' @param dat A list containing the following:
+#' 
 #' y1: Set of observations by the first observer, measured in distance units from the start of the transect.
+#' 
 #' y2: Set of observations by the second observer.
+#' 
 #' k: Lag (in seconds) between observer 1 and observer 2.
+#' 
 #' L: Length of the transect line, in the same distance units as y1 and y2. 
+#' 
 #' w: Half-width of the detection strip in distance units. 
+#' 
 #' b: Buffer half-width (distance from the centre line of the detection strip to the edge of the buffer), beyond which the method assumes that no animal can enter the detection strip between passage of the two observers. 
 #' 
 #' 

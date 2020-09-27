@@ -65,8 +65,7 @@ class dfs_compute_likelihood
     
     // Vars calculated at root node
     num p10k, p01k, p11k;
-    int nplus10, nplus01;
-    
+
 public:
     num Lk_accumulator;  // at the end, this equals Lk.
     
