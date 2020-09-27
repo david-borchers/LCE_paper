@@ -71,7 +71,7 @@ b: Buffer half-width (distance from the centre line of the detection strip to th
 
 \item{adj.mvt}{Adjust animal movement along the transect line to account for observer movement (e.g. if the animal moves in the opposite direction to the observers, then the elapsed time between the two observers passing the animal is less than k). If the flag is set to FALSE, the animal movement model assumes k seconds elapsed between the two observers passing the animal  (defaults to TRUE).}
 
-\item{ft.normal}{If TRUE, uses normal to approximate Brownian hitting times, else uses exact expression for Brownian hitting times.}
+\item{ft.normal}{If TRUE, uses normal to approximate Brownian hitting times, else uses exact expression for Brownian hitting times (defaults to FALSE).}
 
 \item{cutstretch}{Factor to increase the maximum distance at which two observations may be considered to be observations of the same animal (defaults to 1).}
 

@@ -45,7 +45,7 @@
 #' @param Dbound If estimating only D, Dbound may be used to provide upper and lower bounds for log(D). It is a list with elements $lower and $upper (default value NULL).
 #' @param hessian 
 #' @param adj.mvt Adjust animal movement along the transect line to account for observer movement (e.g. if the animal moves in the opposite direction to the observers, then the elapsed time between the two observers passing the animal is less than k). If the flag is set to FALSE, the animal movement model assumes k seconds elapsed between the two observers passing the animal  (defaults to TRUE).
-#' @param ft.normal If TRUE, uses normal to approximate Brownian hitting times, else uses exact expression for Brownian hitting times.
+#' @param ft.normal If TRUE, uses normal to approximate Brownian hitting times, else uses exact expression for Brownian hitting times (defaults to FALSE).
 #' @param cutstretch Factor to increase the maximum distance at which two observations may be considered to be observations of the same animal (defaults to 1).
 #' @param krtest This parameter is no longer used. 
 
