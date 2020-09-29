@@ -43,7 +43,7 @@
 #' @param set.parscale Set the parscale parameter of optim using the starting point values given (defaults to TRUE)
 #' @param io Include in/out movement in the model, i.e. animals may become available or unavailable for detection between observers because of movement in/out of the detection strip (defaults to TRUE)
 #' @param Dbound If estimating only D, Dbound may be used to provide upper and lower bounds for log(D). It is a list with elements $lower and $upper (default value NULL).
-#' @param hessian 
+#' @param hessian If TRUE the Hessian matrix is calculated and returned. This can be used to estimate the asymptotic variance-covariance matrix of the parameters.
 #' @param adj.mvt Adjust animal movement along the transect line to account for observer movement (e.g. if the animal moves in the opposite direction to the observers, then the elapsed time between the two observers passing the animal is less than k). If the flag is set to FALSE, the animal movement model assumes k seconds elapsed between the two observers passing the animal  (defaults to TRUE).
 #' @param ft.normal If TRUE, uses normal to approximate Brownian hitting times, else uses exact expression for Brownian hitting times (defaults to FALSE).
 #' @param cutstretch Factor to increase the maximum distance at which two observations may be considered to be observations of the same animal (defaults to 1).
