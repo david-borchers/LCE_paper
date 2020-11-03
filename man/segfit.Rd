@@ -67,7 +67,7 @@ b: Buffer half-width (distance from the centre line of the detection strip to th
 
 \item{Dbound}{If estimating only D, Dbound may be used to provide upper and lower bounds for log(D). It is a list with elements $lower and $upper (default value NULL).}
 
-\item{hessian}{}
+\item{hessian}{If TRUE the Hessian matrix is calculated and returned. This can be used to estimate the asymptotic variance-covariance matrix of the parameters.}
 
 \item{adj.mvt}{Adjust animal movement along the transect line to account for observer movement (e.g. if the animal moves in the opposite direction to the observers, then the elapsed time between the two observers passing the animal is less than k). If the flag is set to FALSE, the animal movement model assumes k seconds elapsed between the two observers passing the animal  (defaults to TRUE).}
 
